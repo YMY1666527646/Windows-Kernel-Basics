@@ -6,8 +6,8 @@
 # Entry point and Unload routine
 ## Driver Entry Point
 - In the windows kernel the "main" function(Entry point) is called DriverEntry, that's expect two parameters</br>
-1 - The driver object, declared using "PDRIVER_OBJECT";</br>
-2 - A Strig that's point to a RegistryPath;</br>
+1. The driver object, declared using "PDRIVER_OBJECT";
+2. A Strig that's point to a RegistryPath;
 - The function like this: 
 ```c
 NTSTATUS DriverEntry(IN PDRIVER_OBJECT pDriverObject, IN PUNICODE_STRING pRegistryPath)
@@ -27,8 +27,8 @@ pDriverObject->DriverUnload = /* Your unload function name, in my case: */Driver
 ```
 # Print messages
 - To print messages you have two principal methods </br>
-1 - KdPrint </br>
-2 - DbgPrint </br>
+1. KdPrint 
+2. DbgPrint
 
 - Example:
 ```c
