@@ -105,7 +105,7 @@ NTSTATUS DriverEntry(IN PDRIVER_OBJECT pDriverObject, IN PUNICODE_STRING pRegist
  	UNICODE_STRING password = RTL_CONSTANT_STRING(L"12345");
 	UNICODE_STRING correct_password = RTL_CONSTANT_STRING(L"6789");
 	
-	// Now, you need to compare the two streings to see if the password is correct
+	// Now, you need to compare the two strings to see if the password is correct
 	// For this, you can use RtlEqualUnicodeString
 	// RtlEqualUnicodeString is a functon that's expect three parameters
 	// String 1, String 2 and a boolean that's determinate if the functions check if strings are equals or different
