@@ -21,3 +21,17 @@ NTSTATUS DriverEntry(IN PDRIVER_OBJECT pDriverObject, IN PUNICODE_STRING pRegist
 ```c
 VOID DriverUnload(IN PDRIVER_OBJECT pDriverObject) 
 ```
+### Note: In the DriverEntry you need to declare your unload fucntion, you can use:
+```c
+pDriverObject->DriverUnload = /* Your unload function name, in my case: */DriverUnload;
+```
+# Print messages
+- To print messages you have two principal methods </br>
+1 - KdPrint </br>
+2 - DbgPrint </br>
+
+- Example:
+```c
+KdPrint(("Hello World!\r\n"));
+DbgPrint("Hello World!\r\n");
+```
