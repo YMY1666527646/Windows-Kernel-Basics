@@ -35,3 +35,31 @@ pDriverObject->DriverUnload = /* Your unload function name, in my case: */Driver
 KdPrint(("Hello World!\r\n"));
 DbgPrint("Hello World!\r\n");
 ```
+
+# Example 1 - Simple Driver
+- In this section you make a simple driver using the concepts that's you see in last sections
+```c
+// Default header for kernel drivers, like iostream in usermode apps
+#include <ntddk.h>
+
+// Unload Routine
+VOID DriverUnload(IN PDRIVER_OBJECT pDriverObject)
+{
+	KdPrint(("Unload Called!\r\n"));
+} 
+
+// Driver Entry Point, like int main()
+NTSTATUS DriverEntry(IN PDRIVER_OBJECT pDriverObject, IN PUNICODE_STRING pRegistryPath)
+{
+  // Point a Unload Function
+	pDriverObject->DriverUnload = DriverUnload;
+
+  // Say for compiler that's parameter is not used 
+	UNREFERENCED_PARAMETER(pRegistryPath);
+  
+  // Print some message, like printf()
+	KdPrint(("Hello, i am a main function!\r\n")); 
+  
+  // Return some status for your function, like return 0
+	return STATUS_SUCCESS;
+}
