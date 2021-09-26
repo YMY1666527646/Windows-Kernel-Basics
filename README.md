@@ -2,3 +2,13 @@
 
 - This repository have a objective, show some kernel features in windows. This repository is maded for me while i'm learning about this tecnology.
 - Note: In all sources of this repository have a lot of comments in the code that's teach you how each function does.   
+
+# Entry point and Unload routine
+
+- In the windows kernel the "main" function(Entry point) is called DriverEntry, that's expect two parameters</br>
+1 - The driver object, declared using "PDRIVER_OBJECT";</br>
+2 - A Strig that's point to a RegistryPath;</br>
+</br>
+</br>
+- The function like this: </br>
+``` NTSTATUS DriverEntry(IN PDRIVER_OBJECT pDriverObject, IN PUNICODE_STRING pRegistryPath) ``
