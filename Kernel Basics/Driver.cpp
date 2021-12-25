@@ -8,7 +8,7 @@ VOID DriverUnload(IN PDRIVER_OBJECT pDriverObject)
 }
 
 // Driver Entry Point, like int main()
-NTSTATUS DriverEntry(IN PDRIVER_OBJECT pDriverObject, IN PUNICODE_STRING pRegistryPath)
+extern "C" NTSTATUS NTAPI DriverEntry(PDRIVER_OBJECT pDriverObject, PUNICODE_STRING pRegistryPath)
 {
 	pDriverObject->DriverUnload = DriverUnload;
 	/********************************************************************************************************
