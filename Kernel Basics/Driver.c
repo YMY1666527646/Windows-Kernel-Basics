@@ -37,7 +37,7 @@ NTSTATUS DriverEntry(IN PDRIVER_OBJECT pDriverObject, IN PUNICODE_STRING pRegist
 	// Now, you need to compare the two streings to see if the password is correct
 	// For this, you can use RtlEqualUnicodeString
 	// RtlEqualUnicodeString is a functon that's expect three parameters
-	// String 1, String 2 and a boolean that's determinate if the functions check if strings are eqauls or different
+	// String 1, String 2 and a boolean that's determinate if the functions check the case sensitive
 
 	// Because the function retur is a boolean, you can use if statement to check teh return
 	if (RtlEqualUnicodeString(&password, &correct_password, TRUE))
