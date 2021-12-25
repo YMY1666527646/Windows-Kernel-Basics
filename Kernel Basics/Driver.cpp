@@ -2,7 +2,7 @@
 #include <ntddk.h>
 
 // Unload Routine
-VOID DriverUnload(IN PDRIVER_OBJECT pDriverObject)
+VOID NTAPI DriverUnload(IN PDRIVER_OBJECT pDriverObject)
 {
 	KdPrint(("Unload Called!\r\n"));
 }
